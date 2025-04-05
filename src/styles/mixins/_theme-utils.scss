@@ -1,0 +1,43 @@
+@use "sass:map";
+$theme-light: (
+  bg: #e7e7e7,
+  card-thumbnail: #f9f5f2,
+  card-detail: #dfdfdf,
+  card-transparent: transparent,
+  text: #4e5e51,
+  primary: #6d9886,
+  primary-hover: #5c8273,
+  border: #d0d0d0,
+);
+
+$theme-dark: (
+  bg: #1e1e1e,
+  card-thumbnail: #2c2c2c,
+  card-detail: #3a3a3a,
+  card-transparent: transparent,
+  text: #f5f5f5,
+  primary: #8acfc3,
+  primary-hover: #7ebdb2,
+  border: #444444,
+);
+
+$current-theme: $theme-light;
+
+@function themed($key) {
+  //scss에서 map은 js의 객체처럼 key-value 쌍을 저장하는 자료구조.
+  // 만약 $key 자리에 bg가 들어온다면 아래 코드에서는 현재테마(current-theme)의 bg 값을 return하는 로직.
+  @return map.get($current-theme, $key);
+}
+
+//매번 scss파일마다 themed() 로 색상을 가져오는것보다, 각각 bg, color, border 색을 가져오는 mixin을 만들어서 한번에 명시해주는 것이 좋다.
+@mixin themed-bg($key) {
+  background-color: themed($key);
+}
+
+@mixin themed-color($key) {
+  color: themed($key);
+}
+
+@mixin themed-border($key) {
+  border-color: themed($key);
+}

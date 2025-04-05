@@ -1,0 +1,63 @@
+@use "../mixins" as mixin;
+
+.cardContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.image {
+  width: 60%;
+  height: auto;
+}
+
+.thumbnail {
+  @include mixin.themed-bg("card-thumbnail");
+}
+
+.detail {
+  @include mixin.themed-bg("card-detail");
+}
+.transparent {
+  @include mixin.themed-bg("card-transparent");
+}
+
+// card list
+.cardContainer {
+  // width: 100%;
+  // width: 25%;
+  // height: 50px;
+  aspect-ratio: 1 / 1; /* 정사각형 유지 */
+  position: relative;
+}
+.hoverCard {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  @include mixin.themed-color("card-thumbnail");
+  @include mixin.apply-text-style("sans", "body");
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  background-color: rgba(83, 83, 83, 0.57);
+}
+.cardContainer:hover .hoverCard {
+  display: flex;
+}
+.cardListContainer {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  grid-auto-rows: minmax(100px, auto);
+  box-sizing: border-box;
+}

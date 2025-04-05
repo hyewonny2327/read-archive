@@ -1,0 +1,45 @@
+// 기본 폰트 셋팅
+$font-family-serif: "Abhaya Libre", serif;
+$font-family-sans: "Noto Sans KR";
+$font-families: (
+  "serif": $font-family-serif,
+  "sans": $font-family-sans,
+);
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+$text-style-values: (
+  "heading-xl": (
+    weight: $font-weight-extrabold,
+    size: 2rem,
+    lh: 1.3,
+  ),
+  "heading-lg": (
+    weight: $font-weight-bold,
+    size: 1.5rem,
+    lh: 1.4,
+  ),
+  "body": (
+    weight: $font-weight-regular,
+    size: 1rem,
+    lh: 1.6,
+  ),
+  "caption": (
+    weight: $font-weight-medium,
+    size: 0.875rem,
+    lh: 1.5,
+  ),
+);
+
+@mixin apply-text-style($type, $style) {
+  $font-family: map-get($font-families, $type);
+  $style-values: map-get($text-style-values, $style);
+
+  font-family: $font-family;
+  font-weight: map-get($style-values, weight);
+  font-size: map-get($style-values, size);
+}
