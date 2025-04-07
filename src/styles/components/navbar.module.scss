@@ -1,7 +1,7 @@
-@use "../mixins" as mixin;
+@use '../mixins' as mixin;
 .navbarContainer {
-  @include mixin.apply-text-style("serif", "heading-xl");
-  @include mixin.themed-color("text");
+  @include mixin.apply-text-style('serif', 'heading-xl');
+  @include mixin.themed-color('text');
   width: 100%;
   display: flex;
   flex-direction: column;

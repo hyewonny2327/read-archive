@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
-import styles from "../styles/pages/mainpage.module.scss";
-import Navbar from "../components/Navbar";
-import CardList from "../components/CardList";
-import { Book } from "../types/types";
-import bookData from "../assets/data.json";
+import { useEffect, useState } from 'react';
+import styles from '../styles/pages/mainpage.module.scss';
+import Navbar from '../components/Navbar';
+import CardList from '../components/CardList';
+import { Book } from '../types/types';
+import bookData from '../assets/data.json';
+import SearchBar from '../components/SearchBar';
 
 function MainPage() {
   const [books, setBooks] = useState<Book[]>(bookData);
@@ -12,7 +13,9 @@ function MainPage() {
     <div className={styles.pageContainer}>
       <div>
         <div>heaader</div>
-        <div>searchbar</div>
+        <div>
+          <SearchBar />
+        </div>
       </div>
       <div className={styles.body}>
         <div className={styles.category}>

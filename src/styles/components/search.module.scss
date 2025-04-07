@@ -1,0 +1,11 @@
+@use '../mixins' as mixin;
+.searchContainer {
+  display: flex;
+  border-bottom: 1px solid black;
+  width: 180px;
+  justify-content: space-between;
+  padding: 0.3rem;
+}
+.searchInput {
+  border: none;
+}

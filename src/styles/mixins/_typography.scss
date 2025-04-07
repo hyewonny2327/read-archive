@@ -1,9 +1,9 @@
 // 기본 폰트 셋팅
-$font-family-serif: "Abhaya Libre", serif;
-$font-family-sans: "Noto Sans KR";
+$font-family-serif: 'Abhaya Libre', serif;
+$font-family-sans: 'Noto Sans KR';
 $font-families: (
-  "serif": $font-family-serif,
-  "sans": $font-family-sans,
+  'serif': $font-family-serif,
+  'sans': $font-family-sans,
 );
 
 $font-weight-regular: 400;
@@ -13,22 +13,22 @@ $font-weight-bold: 700;
 $font-weight-extrabold: 800;
 
 $text-style-values: (
-  "heading-xl": (
+  'heading-xl': (
     weight: $font-weight-extrabold,
     size: 2rem,
     lh: 1.3,
   ),
-  "heading-lg": (
+  'heading-lg': (
     weight: $font-weight-bold,
     size: 1.5rem,
     lh: 1.4,
   ),
-  "body": (
+  'body': (
     weight: $font-weight-regular,
     size: 1rem,
     lh: 1.6,
   ),
-  "caption": (
+  'caption': (
     weight: $font-weight-medium,
     size: 0.875rem,
     lh: 1.5,
